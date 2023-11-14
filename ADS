@@ -1,0 +1,41 @@
+class Song:
+    def __init__(self, title, artist, duration):
+        self.title = title
+        self.artist = artist
+        self.duration = duration
+
+    def play(self):
+        print(f"Now playing: {self.title} by {self.artist}")
+        print(f"Duration: {self.duration} seconds")
+
+class Playlist:
+    def __init__(self, name):
+        self.name = name
+        self.songs = []
+
+    def add_song(self, song):
+        self.songs.append(song)
+
+    def remove_song(self, song):
+        self.songs.remove(song)
+
+    def play_all(self):
+        print(f"Playing all songs in {self.name} playlist:")
+        for song in self.songs:
+            song.play()
+
+# Create some songs
+song1 = Song("Song 1", "Artist 1", 180)
+song2 = Song("Song 2", "Artist 2", 240)
+song3 = Song("Song 3", "Artist 3", 200)
+
+# Create a playlist
+playlist = Playlist("My Playlist")
+
+# Add songs to the playlist
+playlist.add_song(song1)
+playlist.add_song(song2)
+playlist.add_song(song3)
+
+# Play all songs in the playlist
+playlist.play_all()
